@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CartButton } from '@/components/CartButton';
+import { Cart } from '@/components/Cart';
 
 const navItems = [
   { name: 'Home', href: '#home', path: '/' },
@@ -12,6 +14,7 @@ const navItems = [
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,72 +26,85 @@ export const Navigation: React.FC = () => {
   }, []);
 
   const handleNavClick = (href: string, path: string) => {
-    // Smooth scroll to section
+    window.history.replaceState({}, '', path);
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    
+
     setIsOpen(false);
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-dark shadow-lg' : 'glass'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div 
-            className="heading-display text-2xl lg:text-3xl text-gold-primary cursor-pointer hover-glow"
-            onClick={() => handleNavClick('#home', '/')}
-          >
-            Thelamandu
-          </div>
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'nav-vintage shadow-2xl' : 'glass'}`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20 lg:h-24">
+            {/* Logo */}
+            <div
+              className="text-logo-style text-3xl lg:text-4xl cursor-pointer hover-glow-vintage transition-all duration-500"
+              onClick={() => handleNavClick('#home', '/')}
+            >
+              THELAMANDU
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href, item.path)}
-                className="text-foreground hover:text-gold-primary transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-foreground hover:text-gold-primary"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden glass-dark border-t border-border/20">
-            <div className="px-2 pt-2 pb-4 space-y-2">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href, item.path)}
-                  className="block w-full text-left px-3 py-2 text-foreground hover:text-gold-primary transition-colors duration-300 font-medium"
+                  className="text-deep-brown hover:text-burnt-orange transition-all duration-300 font-semibold text-lg relative group"
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-vintage group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
+              
+              {/* Custom styled cart button */}
+              <div className="ml-4">
+                <CartButton onClick={() => setIsCartOpen(true)} />
+              </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden flex items-center space-x-3">
+              <CartButton onClick={() => setIsCartOpen(true)} />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-deep-brown hover:text-burnt-orange hover:bg-golden-yellow/20 transition-all duration-300"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </Button>
             </div>
           </div>
-        )}
-      </div>
-    </nav>
+
+          {/* Mobile Menu */}
+          {isOpen && (
+            <div className="md:hidden glass-vintage border-t-2 border-burnt-orange/30 animate-vintage-slide">
+              <div className="px-4 pt-4 pb-6 space-y-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href, item.path)}
+                    className="block w-full text-left px-4 py-3 text-deep-brown hover:text-burnt-orange hover:bg-golden-yellow/20 transition-all duration-300 font-semibold text-lg rounded-lg"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Decorative border */}
+        <div className="h-1 bg-gradient-vintage"></div>
+      </nav>
+
+      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+    </>
   );
 };

@@ -3,13 +3,10 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import momoHero from '@/assets/momo-hero.jpg';
 import chiyaHero from '@/assets/chiya-hero.jpg';
-import trayHero from '@/assets/food-tray.jpg';
-
 
 const heroImages = [
   { src: momoHero, alt: 'Fresh Nepali Momos' },
   { src: chiyaHero, alt: 'Traditional Nepali Chiya' },
-  { src: trayHero, alt: 'Sel Roti' },
 ];
 
 export const HeroSection: React.FC = () => {
@@ -17,7 +14,7 @@ export const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % heroImages.length
       );
     }, 4000);
@@ -30,30 +27,41 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden vintage-pattern">
       <div className="container mx-auto px-4 py-20 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left animate-slide-up">
-            <h1 className="heading-display text-4xl md:text-6xl lg:text-7xl mb-6">
-              Welcome to{' '}
-              <span className="text-gold-primary">Thelamandu</span>
+          <div className="text-center lg:text-left animate-vintage-slide">
+            <h1 className="section-title text-5xl md:text-7xl lg:text-8xl mb-8 animate-vintage-glow">
+              THELAMANDU
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Experience the authentic flavors of Nepal in every bite. From local street foods to signature Nepali style Mo:Mo.
+            <div className="text-3xl md:text-4xl text-deep-brown mb-4 font-semibold">
+              Authentic. Discovered. Delicious.
+            </div>
+            <div className="text-xl text-warm-orange mb-2 font-bold">
+              घरको मिठो स्वाद, गल्लीको रमाइलो मजा
+            </div>
+            <div className="flex items-center justify-center lg:justify-start mb-8 text-deep-brown">
+              <span className="text-2xl mr-2">👉</span>
+              <span className="text-lg font-medium">Taste the street - with a heart from home</span>
+              <span className="text-2xl ml-2">🏠</span>
+            </div>
+            <p className="text-xl md:text-2xl text-deep-brown mb-12 leading-relaxed max-w-2xl">
+              From the heart of the Himalayas to your table, experience authentic Nepali flavors 
+              with recipes passed down through generations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-gold text-primary-foreground hover:opacity-90 hover-lift px-8 py-3"
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+              <Button
+                size="lg"
+                className="btn-vintage text-lg px-10 py-4 hover-vintage"
                 onClick={scrollToMenu}
               >
-                View Menu
+                Explore Menu
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-gold-primary text-gold-primary hover:bg-gold-primary hover:text-primary-foreground px-8 py-3"
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-3 border-burnt-orange text-burnt-orange hover:bg-gradient-vintage hover:text-deep-brown px-10 py-4 text-lg font-semibold transition-all duration-500 hover-vintage"
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Visit Us
@@ -61,37 +69,67 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Rotating Food Image */}
+          {/* Vintage Food Cart Illustration */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
-              {/* Decorative Ring */}
-              <div className="absolute inset-0 rounded-full border-4 border-gold-primary/30 animate-pulse"></div>
-              <div className="absolute inset-2 rounded-full border-2 border-copper/20"></div>
-              
-              {/* Image Container */}
-              <div className="absolute inset-4 rounded-full overflow-hidden shadow-2xl animate-float">
+            <div className="relative w-96 h-96 md:w-[450px] md:h-[450px]">
+              {/* Decorative vintage rings */}
+              <div className="absolute inset-0 rounded-full border-4 border-golden-yellow/40 animate-vintage-glow"></div>
+              <div className="absolute inset-4 rounded-full border-3 border-burnt-orange/30 animate-pulse"></div>
+              <div className="absolute inset-8 rounded-full border-4 border-warm-orange/40"></div>
+
+              {/* Food image with vintage styling */}
+              <div className="absolute inset-12 rounded-full overflow-hidden shadow-2xl animate-vintage-float glass-vintage">
                 {heroImages.map((image, index) => (
                   <img
                     key={index}
                     src={image.src}
                     alt={image.alt}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
+                      index === currentImageIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
                     }`}
                   />
                 ))}
+                
+                {/* Vintage overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-golden-yellow/10 via-transparent to-burnt-orange/20 pointer-events-none"></div>
               </div>
 
-              {/* Rotating Border */}
-              <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-gold-primary via-transparent to-gold-primary animate-spin" style={{ animationDuration: '20s' }}></div>
+              {/* Rotating vintage border - like a cart wheel */}
+              <div 
+                className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-burnt-orange via-golden-yellow to-warm-orange opacity-60" 
+                style={{ 
+                  background: 'conic-gradient(from 0deg, hsl(var(--burnt-orange)), hsl(var(--golden-yellow)), hsl(var(--warm-orange)), hsl(var(--burnt-orange)))',
+                  animation: 'rotateVintage 25s linear infinite',
+                  mask: 'radial-gradient(circle, transparent 90%, black 92%, black 100%)'
+                }}
+              ></div>
+
+              {/* Cart wheel spokes effect */}
+              <div className="absolute inset-16 flex items-center justify-center">
+                <div className="w-full h-0.5 bg-burnt-orange/30 absolute rotate-0"></div>
+                <div className="w-full h-0.5 bg-burnt-orange/30 absolute rotate-45"></div>
+                <div className="w-full h-0.5 bg-burnt-orange/30 absolute rotate-90"></div>
+                <div className="w-full h-0.5 bg-burnt-orange/30 absolute rotate-135"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Vintage scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-gold-primary" size={32} />
+          <div className="flex flex-col items-center space-y-2">
+            <ChevronDown className="text-burnt-orange animate-vintage-glow" size={36} />
+            <div className="w-0.5 h-12 bg-gradient-to-b from-burnt-orange to-transparent"></div>
+          </div>
         </div>
+      </div>
+
+      {/* Vintage background elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10 animate-vintage-float">
+        <div className="w-full h-full rounded-full bg-gradient-vintage"></div>
+      </div>
+      <div className="absolute bottom-32 right-16 w-24 h-24 opacity-15 animate-vintage-float" style={{ animationDelay: '2s' }}>
+        <div className="w-full h-full rounded-full bg-gradient-sunset"></div>
       </div>
     </section>
   );

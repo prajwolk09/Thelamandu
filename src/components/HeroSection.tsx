@@ -70,8 +70,8 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Vintage Food Cart Illustration */}
-          <div className="relative flex justify-center lg:justify-end">
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
+          <div className="hidden lg:flex relative justify-end">
+              <div className="relative w-96 h-96 lg:w-[450px] lg:h-[450px]">
               {/* Decorative vintage rings */}
               <div className="absolute inset-0 rounded-full border-4 border-golden-yellow/40 animate-vintage-glow"></div>
               <div className="absolute inset-2 sm:inset-4 rounded-full border-3 border-burnt-orange/30 animate-pulse"></div>

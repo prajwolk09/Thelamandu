@@ -29,13 +29,13 @@ export const HeroSection: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden vintage-pattern">
       <div className="container mx-auto px-4 py-20 z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-vintage-slide">
-            <h1 className="section-title text-5xl md:text-7xl lg:text-8xl mb-8 animate-vintage-glow">
+              <h1 className="section-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 animate-vintage-glow">
               THELAMANDU
             </h1>
-            <div className="text-3xl md:text-4xl text-deep-brown mb-4 font-semibold">
+              <div className="text-2xl sm:text-3xl md:text-4xl text-deep-brown mb-4 font-semibold">
               Authentic. Discovered. Delicious.
             </div>
             <div className="text-xl text-warm-orange mb-2 font-bold">
@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Button
                 size="lg"
-                className="btn-vintage text-lg px-10 py-4 hover-vintage"
+                className="btn-vintage text-base sm:text-lg px-6 sm:px-10 py-4 hover-vintage w-full sm:w-auto"
                 onClick={scrollToMenu}
               >
                 Explore Menu
@@ -71,14 +71,14 @@ export const HeroSection: React.FC = () => {
 
           {/* Vintage Food Cart Illustration */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-96 h-96 md:w-[450px] md:h-[450px]">
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
               {/* Decorative vintage rings */}
               <div className="absolute inset-0 rounded-full border-4 border-golden-yellow/40 animate-vintage-glow"></div>
-              <div className="absolute inset-4 rounded-full border-3 border-burnt-orange/30 animate-pulse"></div>
-              <div className="absolute inset-8 rounded-full border-4 border-warm-orange/40"></div>
+              <div className="absolute inset-2 sm:inset-4 rounded-full border-3 border-burnt-orange/30 animate-pulse"></div>
+              <div className="absolute inset-4 sm:inset-8 rounded-full border-4 border-warm-orange/40"></div>  
 
               {/* Food image with vintage styling */}
-              <div className="absolute inset-12 rounded-full overflow-hidden shadow-2xl animate-vintage-float glass-vintage">
+              <div className="absolute inset-8 sm:inset-12 rounded-full overflow-hidden shadow-2xl animate-vintage-float glass-vintage">
                 {heroImages.map((image, index) => (
                   <img
                     key={index}

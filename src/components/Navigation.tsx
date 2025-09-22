@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CartButton } from '@/components/CartButton';
 import { Cart } from '@/components/Cart';
+import logo from '@/assets/logo.jpg'
 
 const navItems = [
   { name: 'Home', href: '#home', path: '/' },
@@ -42,11 +43,18 @@ export const Navigation: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <div
-              className="text-logo-style text-3xl lg:text-4xl cursor-pointer hover-glow-vintage transition-all duration-500"
-              onClick={() => handleNavClick('#home', '/')}
-            >
-              THELAMANDU
+            <div onClick={() => handleNavClick('#home', '/')} className="cursor-pointer">
+            {/* Text logo (only on large screens and up) */}
+            <div className="hidden lg:block text-logo-style text-3xl lg:text-4xl hover-glow-vintage transition-all duration-500">
+            THELAMANDU
+            </div>
+
+            {/* Image logo (visible on medium screens and below) */}
+            <img
+            src={logo}
+            alt="Thelamandu Logo"
+            className="block lg:hidden h-10 w-auto hover-glow-vintage transition-all duration-500"
+            />
             </div>
 
             {/* Desktop Navigation */}

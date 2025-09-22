@@ -56,7 +56,7 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 ">
-      <Card className="glass-vintage w-full max-w-3xl max-h-[90vh] overflow-hidden border-4 vintage-border">
+        <Card className="glass-vintage w-full max-w-3xl h-[90vh] flex flex-col border-4 vintage-border overflow-hidden">
         {/* Header */}
         <div className="p-6 border-b-2 border-burnt-orange/30 bg-gradient-warm">
           <div className="flex items-center justify-between">

@@ -33,7 +33,8 @@ export const HeroSection: React.FC = () => {
           {/* Content */}
           <div className="text-center lg:text-left animate-vintage-slide">
               <h1 className="section-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 animate-vintage-glow">
-              THELAMANDU
+              <span className="text-primary">THELA</span> 
+              <span>MANDU</span>
             </h1>
               <div className="text-2xl sm:text-3xl md:text-4xl text-deep-brown mb-4 font-semibold">
               Authentic. Discovered. Delicious.

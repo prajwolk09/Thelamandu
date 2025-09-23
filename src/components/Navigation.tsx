@@ -46,7 +46,7 @@ export const Navigation: React.FC = () => {
             <div onClick={() => handleNavClick('#home', '/')} className="cursor-pointer">
             {/* Text logo (only on large screens and up) */}
             <div className="hidden lg:block text-logo-style text-3xl lg:text-4xl hover-glow-vintage transition-all duration-500">
-            THELAMANDU
+          <span className="text-primary">THELA</span><span>MANDU</span>
             </div>
 
             {/* Image logo (visible on medium screens and below) */}

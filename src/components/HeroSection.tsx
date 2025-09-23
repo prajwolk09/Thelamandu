@@ -116,9 +116,9 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Vintage scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="flex flex-col items-center space-y-2 animate-bounce mt-10 sm:mt-12 relative sm:absolute sm:bottom-8 sm:left-1/2 sm:-translate-x-1/2">
           <div className="flex flex-col items-center space-y-2">
-            <ChevronDown className="text-burnt-orange animate-vintage-glow" size={36} />
+            <ChevronDown className="ext-burnt-orange animate-vintage-glow" size={36} />
             <div className="w-0.5 h-12 bg-gradient-to-b from-burnt-orange to-transparent"></div>
           </div>
         </div>

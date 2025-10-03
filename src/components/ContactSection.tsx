@@ -74,14 +74,7 @@ export const ContactSection: React.FC = () => {
           {/* Map Section */}
           <Card className="glass-light p-8 h-full">
             <div className="h-full min-h-[600px] bg-gradient-warm rounded-lg border-2 border-dashed border-pink-accent/30 p-2">
-              <iframe
-                className="w-full h-full rounded-md"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.206756780712!2d85.3198463150619!3d27.707984982794567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fefb8c93e7%3A0xd7d44da7e5b95f6a!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1692715948564!5m2!1sen!2snp"
-              ></iframe>
+              <iframe className='w-full h-full rounded-md' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49714.171829549545!2d-77.34303755313435!3d38.85224976354697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e96394b91cd%3A0x72326e785448640!2sFairfax%2C%20VA%2C%20USA!5e0!3m2!1sen!2snp!4v1759508980997!5m2!1sen!2snp" width="600" height="450"  loading="lazy"></iframe>
             </div>
 
           </Card>

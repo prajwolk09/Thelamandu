@@ -84,23 +84,20 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3 text-deep-brown">
                 <MapPin className="text-warm-orange mt-1 shrink-0" size={18} />
                 <div>
-                  <div className="font-medium">#######</div>
-                  <div className="font-medium">#######</div>
-                  <div className="font-medium">#######</div>
+                  <div className="font-medium">Fairfax, Virginia, USA</div> 
                 </div>
               </li>
               <li className="flex items-center gap-3 text-deep-brown">
                 <Phone className="text-warm-orange shrink-0" size={18} />
                 <div>
-                  <div className="font-medium"><a href="tel:+15551236372" className="block hover:underline">9999999999</a></div>
-                  <div className="font-medium"><a href="tel:+15551236372" className="block hover:underline">9999999999</a></div>
+                  <div className="font-medium"><a href="tel:+17035594493" className="block hover:underline">+1 (703) 559-4493</a></div>
                 </div>
               </li>
               <li className="flex items-center gap-3 text-deep-brown">
                 <Mail className="text-warm-orange shrink-0" size={18} />
                 <div>
                   <div className="font-medium"><a href="mailto:info@thelamandu.com" className="block hover:underline">info@thelamandu.com</a></div>
-                  <div className="font-medium"><a href="mailto:info@thelamandu.com" className="block hover:underline">orders@thelamandu.com</a></div>
+                  {/* <div className="font-medium"><a href="mailto:info@thelamandu.com" className="block hover:underline">orders@thelamandu.com</a></div> */}
                 </div>
               </li>
             </ul>

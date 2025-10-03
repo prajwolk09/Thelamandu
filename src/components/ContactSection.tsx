@@ -25,9 +25,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <h3 className="heading-primary text-xl mb-2">Location</h3>
                   <p className="text-brown-medium">
-                    #######<br />
-                    #######<br />
-                    #######
+                    Fairfax, Virginia, USA<br />
                   </p>
                 </div>
               </div>
@@ -39,8 +37,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <h3 className="heading-primary text-xl mb-2">Phone</h3>
                   <p className="text-brown-medium space-y-1">
-                    <a href="tel:+15551236372" className="block hover:underline">9999999999</a>
-                    <a href="tel:+15551236372" className="block hover:underline">9999999999</a>
+                    <a href="tel:+17035594493" className="block hover:underline">+1 (703) 559-4493</a>
                   </p>
                 </div>
               </div>
@@ -53,7 +50,7 @@ export const ContactSection: React.FC = () => {
                   <h3 className="heading-primary text-xl mb-2">Email</h3>
                   <p className="text-brown-medium space-y-1">
                     <a href="mailto:info@thelamandu.com" className="block hover:underline">info@thelamandu.com</a>
-                    <a href="mailto:orders@thelamandu.com" className="block hover:underline">orders@thelamandu.com</a>
+                    {/* <a href="mailto:orders@thelamandu.com" className="block hover:underline">orders@thelamandu.com</a> */}
                   </p>
                 </div>
               </div>

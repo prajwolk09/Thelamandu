@@ -43,9 +43,9 @@ export const HeroSection: React.FC = () => {
               घरको मिठो स्वाद, गल्लीको रमाइलो मजा
             </div>
             <div className="flex items-center justify-center lg:justify-start mb-8 text-deep-brown">
-              <span className="text-2xl mr-2">👉</span>
+              {/* <span className="text-2xl mr-2">👉</span> */}
               <span className="text-lg font-medium">Taste the street - with a heart from home</span>
-              <span className="text-2xl ml-2">🏠</span>
+              {/* <span className="text-2xl ml-2">🏠</span> */}
             </div>
             <p className="text-xl md:text-2xl text-deep-brown mb-12 leading-relaxed max-w-2xl">
               From the heart of the Himalayas to your table, experience authentic Nepali flavors 
